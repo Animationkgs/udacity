@@ -1,0 +1,75 @@
+
+
+<html>
+
+<head></head>
+
+<body>
+
+<div id= "initfields"> initfields </div>
+<div id= "fields"> fields </div>
+
+<script src= "js/subtitle01.js"> </script>
+<script src= "js/meaning01.js"> </script>
+<script src= "js/0.js"> </script>
+<script src= "js/html.js"> </script>
+<script src= "js/element.js"> </script>
+<script src= "js/page.js"> </script>
+<script src= "js/util.js"> </script>
+<script src= "js/lesson01.js"> </script>
+<script>
+dom.style(style).appendTo(dom.head);
+
+
+function get(k) {
+	if (this[k]) return this[k];
+	return null;
+}
+
+field(lesson01.name)('lessonname').div();
+
+function put(x,id) {
+   if (x) return field(x)(id).div();
+	return null;
+}
+function view (n) {
+   var m= pad(n);
+   var concept= put(lesson01.concept[n-1], 'concept01'+m);
+	concept.className= 'green';
+   put(lesson01.vid[n-1].split(' ').map(html.iframe), 'embed01'+m);
+   lesson01.subtitle[n-1].map( function (x,n) {
+      field(x)('subtitle01'+m+pad(n)).pretty().div();
+   });
+   lesson01.meaning[n-1].map( function (x,n) {
+      field(x)('meaning01'+m + pad(n)).pretty().div();
+   });
+   put (lesson01.p[n-1], 'p01'+m);
+   put (lesson01.form[n-1], 'form01'+m);
+   put (lesson01.table[n-1], 'table01'+m);
+   put (lesson01.graph[n-1], 'graph01'+m);
+}
+
+view(1);
+view(2);
+view(3);
+view(4);
+view(5);
+view(6);
+view(7);
+view(8);
+view(9);
+view(10);
+view(11);;
+
+
+
+
+
+page.append();
+</script>
+
+</body>
+
+</html>
+
+
